@@ -30,6 +30,59 @@ OR
 and open [http://localhost:8000](http://localhost:8000/api/search/dxb180518bkk)
 
 
+API
+---
+
+<details>
+<summary> Get service version: </summary>
+
+    GET /api/
+
+</details>
+
+<details>
+<summary> Get list of itineraries from DXB to BKK on 18-05-18 - template: </summary>
+
+    GET /api/search/DXB180518BKK?sort={price,duration}&order={asc,desc}
+
+</details>
+
+<details>
+<summary>Get list of itineraries - optimal choice (sorted by price, duration in ascending order): </summary>
+
+    GET /api/search/DXB180518BKK
+
+</details>
+
+<details>
+<summary>Get list of itineraries - cheapest itinerarie (sorted by price in ascending order): </summary>
+
+    GET /api/search/DXB180518BKK?sort=price
+
+</details>
+
+<details>
+<summary>Get list of itineraries - the most expensive itinerarie (sorted by price in descending order): </summary>
+
+    GET /api/search/DXB180518BKK?sort=price&order=desc
+
+</details>
+
+<details>
+<summary> Get list of itineraries - the shortest itinerarie (sorted by duration in ascending order): </summary>
+
+    GET /api/search/DXB180518BKK?sort=duration
+
+</details>
+
+<details>
+<summary>Get list of itineraries - the longest itinerarie (sorted by duration in descending order): </summary>
+
+    GET /api/search/DXB180518BKK?sort=duration&order=desc
+
+</details>
+
+
 ToDo
 ----------
 

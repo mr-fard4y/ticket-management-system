@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+    db:
+        image: mongo:latest
+        container_name: ticket-system-db
+        ports:
+          - 27017:27017
+
+    app:
+        build: .
+        container_name: ticket-system-app
+        working_dir: /usr/src/app
+        environment:
+          - APP_STAGE=prod
+          - APP_DB=mongodb://db:27017/flights_app
+        ports:
+          - 8000:8000
+        links:
+          - db
+        command: >
+          bash -c "pipenv run python manage.py init_state &&
+                   pipenv run gunicorn -b 0.0.0.0:8000 manage:app"

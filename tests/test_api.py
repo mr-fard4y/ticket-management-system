@@ -8,6 +8,14 @@ TEST_ROUTE_PARAMS = [
 
     ('/api/', '', 200),
     ('/api/echo', '', 200),
+
+    ('/search/dxb180518bkk', '', 200),
+
+    ('/search/dxb180518bkk', 'sort=price', 200),
+    ('/search/dxb180518bkk', 'sort=price&order=ASC', 200),
+
+    ('/search/dxb180518bkk', 'sort=duration', 200),
+    ('/search/dxb180518bkk', 'sort=duration&order=DESC', 200)
 ]
 
 

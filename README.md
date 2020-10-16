@@ -30,6 +30,17 @@ OR
 and open [http://localhost:8000](http://localhost:8000/api/search/dxb180518bkk)
 
 
+ToDo
+----------
+
+Several improvements and fixes for the future:
+
+- Linters and code analyzing, static validation
+- Cover by functional and unit tests
+- Dockerization. Separate configs (nginx, unicorn, etc) to files
+- etc
+
+
 Support
 -------
 

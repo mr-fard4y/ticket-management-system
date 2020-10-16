@@ -20,7 +20,7 @@ Usage
 For running service:
 
 ```bash
-    make run
+    make run_docker
 ```
 OR
 ```bash
@@ -33,5 +33,5 @@ and open [http://localhost:8000](http://localhost:8000/api/search/dxb180518bkk)
 Support
 -------
 
-If you have found some issues, please let me know.
+If you find some issues, please let me know.
 * Fe-Nik-S <mikifeynman@gmail.com>

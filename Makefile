@@ -9,3 +9,15 @@ run_server:
 
 run_tests:
 	pipenv run pytest
+
+run_docker:
+	make build_docker && make start_docker
+
+build_docker:
+	docker-compose build
+
+start_docker:
+	docker-compose up
+
+destroy_docker:
+	docker-compose down

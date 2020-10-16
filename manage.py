@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-# ---------------------------------------------------------------------
-#
-# ---------------------------------------------------------------------
-# Copyright (C) 2019-Present
-# See LICENSE for details
-# ---------------------------------------------------------------------
 
 import os
 from flask_script import Manager, Shell, Server
@@ -17,6 +10,29 @@ manager = Manager(app)
 
 def make_shell_context():
     return dict(app=app)
+
+
+@manager.command
+def run_tests():
+    """Run the unit tests."""
+    import unittest
+
+    path_to_tests = os.path.join(
+        os.getcwd(), "tests"
+    )
+    tests = unittest.TestLoader().discover(path_to_tests)
+    unittest.TextTestRunner(verbosity=2).run(tests)
+
+
+@manager.command
+def clear_db():
+    pass
+
+
+@manager.command
+def init_state():
+    pass
+
 
 
 manager.add_command('runserver', Server())

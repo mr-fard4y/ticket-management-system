@@ -15,4 +15,8 @@ def create_app(app_stage='prod'):
 
 
 def register_blueprints(app):
-    pass
+    from src.api import bp_api
+    app.register_blueprint(bp_api, url_prefix='/api')
+
+    from src.main import bp_main
+    app.register_blueprint(bp_main)

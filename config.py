@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-# ---------------------------------------------------------------------
-#
-# ---------------------------------------------------------------------
-# Copyright (C) 2019-Present
-# See LICENSE for details
-# ---------------------------------------------------------------------
 
 import os
 
@@ -17,6 +10,7 @@ class Config(object):
     DEBUG = False
     TESTING = False
     ENV = 'production'
+    MONGO_URI = os.environ.get('APP_DB') or 'mongodb://127.0.0.1:27017/flights_app'
 
 
 class DevelopmentConfig(Config):

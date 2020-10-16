@@ -2,6 +2,7 @@
 
 from flask import Flask
 from config import config
+from mongoengine.connection import connect as mongo_connect
 
 
 def create_app(app_stage='prod'):
@@ -9,6 +10,11 @@ def create_app(app_stage='prod'):
 
     config_settings = config[app_stage]
     app.config.from_object(config_settings)
+
+    mongo_connect(
+        host=app.config['MONGO_URI'],
+        serverSelectionTimeoutMS=2000
+    )
 
     register_blueprints(app)
     return app
